@@ -1,5 +1,50 @@
 /** @format */
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Setup from "./auth/Setup";
+import Login from "./auth/Login";
+import Dashboard from "./components/Dashboard";
+import Products from "./pages/Products";
+import Sales from "./pages/Sales";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
+import Purchases from "./pages/Purchases";
+import PurchaseReturns from "./pages/PurchaseReturns";
+import SalesReturns from "./pages/SalesReturns";
+import Reports from "./components/Reports";
+import Suppliers from "./pages/Suppliers";
+import StockPrices from "./pages/StockPrices";
+
+function App() {
+	return (
+		<Router>
+			<Header />
+			<div style={{ display: "flex" }}>
+				<Sidebar />
+				<div style={{ marginLeft: "200px", padding: "20px" }}>
+					<Routes>
+						<Route path='/dashboard' element={<Dashboard />} />
+						<Route path='/products' element={<Products />} />
+						<Route path='/sales' element={<Sales />} />
+						<Route path='/stockprices' element={<StockPrices />} />
+						<Route path='/purchases' element={<Purchases />} />
+						<Route path='/suppliers' element={<Suppliers />} />
+						<Route path='/purchasereturns' element={<PurchaseReturns />} />
+						<Route path='/salesreturns' element={<SalesReturns />} />
+						<Route path='/reports' element={<Reports />} />
+					</Routes>
+				</div>
+			</div>
+			<Footer />
+		</Router>
+	);
+}
+
+export default App;
+
+/** @format 
+
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -84,7 +129,7 @@ const App = () => {
 					}}
 				>
 					<Routes>
-						{/* ✅ Step 1: Redirect to Setup if not set up */}
+						{/* ✅ Step 1: Redirect to Setup if not set up *
 						{!isSetup ? (
 							<>
 								<Route path='/setup' element={<Setup />} />
@@ -92,13 +137,13 @@ const App = () => {
 							</>
 						) : !isAuthenticated ? (
 							<>
-								{/* ✅ Step 2: Redirect to Login if not authenticated */}
+								{/* ✅ Step 2: Redirect to Login if not authenticated *
 								<Route path='/login' element={<Login />} />
 								<Route path='*' element={<Navigate to='/login' />} />
 							</>
 						) : (
 							<>
-								{/* ✅ Step 3: Show Main App After Login */}
+								{/* ✅ Step 3: Show Main App After Login *
 								<Route path='/dashboard' element={<Dashboard />} />
 								<Route path='/products' element={<Products />} />
 								<Route path='/sales' element={<Sales />} />
@@ -119,7 +164,7 @@ const App = () => {
 	);
 };
 
-export default App;
+export default App;*/
 
 /** @format 
 
