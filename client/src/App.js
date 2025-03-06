@@ -31,7 +31,7 @@ const App = () => {
 	useEffect(() => {
 		const checkSetup = async () => {
 			try {
-				const response = await axios.get("https://pos-iu1y.onrender.com");
+				const response = await axios.get("https://pos-iu1y.onrender.com/setup");
 				if (response.data) {
 					setIsSetup(true);
 					//localStorage.setItem("isSetup", "true");
