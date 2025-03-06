@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
 	cors({
-		origin: "https://pos.onrender.com",
+		origin: "https://pos-iu1y.onrender.com",
 		methods: ["GET", "POST", "PUT", "DELETE"],
 		credentials: true, // Allow cookies
 		allowedHeaders: ["Content-Type", "Authorization"], // Make sure Authorization is allowed

@@ -29,7 +29,9 @@ const StockPrices = () => {
 
 	const fetchProducts = async () => {
 		try {
-			const response = await axios.get("https://pos.onrender.com/products");
+			const response = await axios.get(
+				"https://pos-iu1y.onrender.com/products"
+			);
 			setProducts(response.data);
 		} catch (error) {
 			console.error("Error fetching products:", error);
@@ -44,7 +46,7 @@ const StockPrices = () => {
 
 		try {
 			await axios.put(
-				`https://pos.onrender.com/stock-prices/${selectedProduct}`,
+				`https://pos-iu1y.onrender.com/stock-prices/${selectedProduct}`,
 				stockPrice
 			);
 			alert("Stock and prices updated successfully!");

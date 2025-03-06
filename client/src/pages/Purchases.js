@@ -40,7 +40,7 @@ const Purchases = () => {
 
 	const fetchPurchases = async () => {
 		try {
-			const response = await axios.get("https://pos.onrender.com");
+			const response = await axios.get("https://pos-iu1y.onrender.com");
 			setPurchases(response.data || []);
 		} catch (error) {
 			console.error("Error fetching purchases:", error);
@@ -49,7 +49,9 @@ const Purchases = () => {
 
 	const fetchProducts = async () => {
 		try {
-			const response = await axios.get("https://pos.onrender.com/products");
+			const response = await axios.get(
+				"https://pos-iu1y.onrender.com/products"
+			);
 			setProducts(response.data || []);
 		} catch (error) {
 			console.error("Error fetching products:", error);
@@ -58,7 +60,9 @@ const Purchases = () => {
 
 	const fetchSuppliers = async () => {
 		try {
-			const response = await axios.get("https://pos.onrender.com/supplier");
+			const response = await axios.get(
+				"https://pos-iu1y.onrender.com/supplier"
+			);
 			setSuppliers(response.data || []);
 		} catch (error) {
 			console.error("Error fetching suppliers:", error);
@@ -94,7 +98,7 @@ const Purchases = () => {
 
 		try {
 			const response = await axios.post(
-				"https://pos.onrender.com/purchases",
+				"https://pos-iu1y.onrender.com/purchases",
 				purchaseData
 			);
 			setPurchases([...purchases, response.data.purchase]);
@@ -117,7 +121,7 @@ const Purchases = () => {
 
 		try {
 			await axios.put(
-				`https://pos.onrender.com/purchases/${editingPurchase.id}`,
+				`https://pos-iu1y.onrender.com/purchases/${editingPurchase.id}`,
 				editingPurchase
 			);
 			setEditingPurchase(null);

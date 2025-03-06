@@ -30,7 +30,7 @@ const Products = () => {
 
 	const fetchProducts = async () => {
 		try {
-			const response = await axios.get("https://pos.onrender.com");
+			const response = await axios.get("https://pos-iu1y.onrender.com");
 			setProducts(response.data);
 		} catch (error) {
 			console.error("Error fetching products:", error);
@@ -45,7 +45,7 @@ const Products = () => {
 			return;
 		}
 		try {
-			await axios.post("https://pos.onrender.com", {
+			await axios.post("https://pos-iu1y.onrender.com", {
 				name: newProduct.name,
 				purchasePrice: parseFloat(newProduct.purchasePrice) || 0,
 				sellingPrice: parseFloat(newProduct.sellingPrice) || 0,

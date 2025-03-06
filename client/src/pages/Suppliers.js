@@ -28,7 +28,9 @@ const Suppliers = () => {
 
 	const fetchSuppliers = async () => {
 		try {
-			const response = await axios.get("https://pos.onrender.com/supplier");
+			const response = await axios.get(
+				"https://pos-iu1y.onrender.com/supplier"
+			);
 			setSuppliers(response.data);
 			setError("");
 		} catch (error) {
@@ -39,7 +41,7 @@ const Suppliers = () => {
 
 	const addSupplier = async () => {
 		try {
-			await axios.post("https://pos.onrender.com/supplier", newSupplier);
+			await axios.post("https://pos-iu1y.onrender.com/supplier", newSupplier);
 			setNewSupplier({ name: "", contact: "", address: "" });
 			fetchSuppliers();
 		} catch (error) {
@@ -49,7 +51,7 @@ const Suppliers = () => {
 
 	const deleteSupplier = async (id) => {
 		try {
-			await axios.delete(`https://pos.onrender.com/supplier/${id}`);
+			await axios.delete(`https://pos-iu1y.onrender.com/supplier/${id}`);
 			setSuppliers(suppliers.filter((supplier) => supplier.id !== id));
 		} catch (error) {
 			console.error("Error deleting supplier:", error);
@@ -60,7 +62,7 @@ const Suppliers = () => {
 		try {
 			if (!editingSupplier) return;
 			await axios.put(
-				`https://pos.onrender.com/suppliers/${editingSupplier.id}`,
+				`https://pos-iu1y.onrender.com/suppliers/${editingSupplier.id}`,
 				editingSupplier
 			);
 			setEditingSupplier(null);

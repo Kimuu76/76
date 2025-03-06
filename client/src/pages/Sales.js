@@ -62,12 +62,12 @@ const Sales = () => {
 	}, []);
 
 	const fetchSales = async () => {
-		const response = await axios.get("https://pos.onrender.com/sales");
+		const response = await axios.get("https://pos-iu1y.onrender.com/sales");
 		setSales(response.data);
 	};
 
 	const fetchProducts = async () => {
-		const response = await axios.get("https://pos.onrender.com/products");
+		const response = await axios.get("https://pos-iu1y.onrender.com/products");
 		setProducts(response.data);
 	};
 
@@ -113,7 +113,7 @@ const Sales = () => {
 				quantity: item.quantity,
 			}));
 
-			const response = await axios.post("https://pos.onrender.com/sales", {
+			const response = await axios.post("https://pos-iu1y.onrender.com/sales", {
 				items: saleItems,
 			});
 

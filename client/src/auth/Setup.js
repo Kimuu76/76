@@ -25,7 +25,7 @@ const Setup = () => {
 		}
 
 		try {
-			const response = await axios.post("https://pos.onrender.com", {
+			const response = await axios.post("https://pos-iu1y.onrender.com", {
 				name,
 				secretKey,
 			});
