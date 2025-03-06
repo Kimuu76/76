@@ -40,7 +40,9 @@ const Purchases = () => {
 
 	const fetchPurchases = async () => {
 		try {
-			const response = await axios.get("https://pos-iu1y.onrender.com");
+			const response = await axios.get(
+				"https://pos-iu1y.onrender.com/purchases"
+			);
 			setPurchases(response.data || []);
 		} catch (error) {
 			console.error("Error fetching purchases:", error);
